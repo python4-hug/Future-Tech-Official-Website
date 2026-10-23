@@ -1,0 +1,936 @@
+/* =========================================================
+FUTURE TECH OFFICIAL
+ANIMATIONS STYLESHEET
+File: frontend/css/animations.css
+
+Purpose:
+
+- Smooth transitions
+- Scroll reveal animations
+- Futuristic glow effects
+- Card hover animations
+- Button interactions
+- Background animations
+- Loading animations
+- Accessibility support
+  ========================================================= */
+
+/* =========================================================
+
+1. GLOBAL ANIMATION SETTINGS
+   ========================================================= */
+
+:root {
+--animation-fast: 180ms ease;
+--animation-normal: 300ms ease;
+--animation-slow: 600ms ease;
+
+--glow-blue:
+    0 0 12px rgba(22, 135, 255, 0.25),
+    0 0 28px rgba(22, 135, 255, 0.12);
+
+--glow-cyan:
+    0 0 12px rgba(0, 217, 255, 0.25),
+    0 0 28px rgba(0, 217, 255, 0.12);
+
+}
+
+/* =========================================================
+2. GLOBAL TRANSITIONS
+========================================================= */
+
+a,
+button,
+input,
+select,
+textarea,
+.btn,
+.card,
+.feature-card,
+.service-card,
+.product-card,
+.innovation-card,
+.icon-box,
+.social-link {
+transition:
+color var(--animation-normal),
+background-color var(--animation-normal),
+border-color var(--animation-normal),
+box-shadow var(--animation-normal),
+transform var(--animation-normal),
+opacity var(--animation-normal);
+}
+
+/* =========================================================
+3. KEYFRAME ANIMATIONS
+========================================================= */
+
+/* Fade in */
+
+@keyframes ftFadeIn {
+from {
+opacity: 0;
+}
+
+to {
+    opacity: 1;
+}
+
+}
+
+/* Fade in and move upward */
+
+@keyframes ftFadeUp {
+from {
+opacity: 0;
+transform: translateY(24px);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+}
+
+/* Fade in and move downward */
+
+@keyframes ftFadeDown {
+from {
+opacity: 0;
+transform: translateY(-18px);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+}
+
+/* Slide in from the left */
+
+@keyframes ftSlideLeft {
+from {
+opacity: 0;
+transform: translateX(-28px);
+}
+
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+}
+
+/* Slide in from the right */
+
+@keyframes ftSlideRight {
+from {
+opacity: 0;
+transform: translateX(28px);
+}
+
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+}
+
+/* Soft pulsing glow */
+
+@keyframes ftPulseGlow {
+0%,
+100% {
+box-shadow:
+0 0 8px rgba(22, 135, 255, 0.12);
+}
+
+50% {
+    box-shadow:
+        0 0 22px rgba(22, 135, 255, 0.32),
+        0 0 36px rgba(0, 217, 255, 0.12);
+}
+
+}
+
+/* Floating effect */
+
+@keyframes ftFloat {
+0%,
+100% {
+transform: translateY(0);
+}
+
+50% {
+    transform: translateY(-10px);
+}
+
+}
+
+/* Gentle floating effect for larger visual elements */
+
+@keyframes ftFloatGentle {
+0%,
+100% {
+transform: translateY(0);
+}
+
+50% {
+    transform: translateY(-6px);
+}
+
+}
+
+/* Rotating decorative element */
+
+@keyframes ftRotate {
+from {
+transform: rotate(0deg);
+}
+
+to {
+    transform: rotate(360deg);
+}
+
+}
+
+/* Loading spinner */
+
+@keyframes ftSpin {
+to {
+transform: rotate(360deg);
+}
+}
+
+/* Expanding ripple */
+
+@keyframes ftRipple {
+0% {
+transform: scale(0.75);
+opacity: 0.7;
+}
+
+100% {
+    transform: scale(1.6);
+    opacity: 0;
+}
+
+}
+
+/* Animated gradient background */
+
+@keyframes ftGradientShift {
+0% {
+background-position: 0% 50%;
+}
+
+50% {
+    background-position: 100% 50%;
+}
+
+100% {
+    background-position: 0% 50%;
+}
+
+}
+
+/* Blinking indicator */
+
+@keyframes ftBlink {
+0%,
+45% {
+opacity: 1;
+}
+
+46%,
+100% {
+    opacity: 0.35;
+}
+
+}
+
+/* Horizontal scanning line */
+
+@keyframes ftScan {
+0% {
+transform: translateY(-100%);
+opacity: 0;
+}
+
+15% {
+    opacity: 0.65;
+}
+
+85% {
+    opacity: 0.65;
+}
+
+100% {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+}
+
+/* Border glow */
+
+@keyframes ftBorderGlow {
+0%,
+100% {
+border-color: rgba(22, 135, 255, 0.25);
+}
+
+50% {
+    border-color: rgba(0, 217, 255, 0.8);
+}
+
+}
+
+/* =========================================================
+4. PAGE ENTRANCE ANIMATIONS
+========================================================= */
+
+.page-enter {
+animation: ftFadeIn 650ms ease both;
+}
+
+.animate-fade-in {
+animation: ftFadeIn 700ms ease both;
+}
+
+.animate-fade-up {
+animation: ftFadeUp 700ms ease both;
+}
+
+.animate-fade-down {
+animation: ftFadeDown 650ms ease both;
+}
+
+.animate-slide-left {
+animation: ftSlideLeft 700ms ease both;
+}
+
+.animate-slide-right {
+animation: ftSlideRight 700ms ease both;
+}
+
+/* Optional staggered entrance timing */
+
+.delay-100 {
+animation-delay: 100ms;
+}
+
+.delay-200 {
+animation-delay: 200ms;
+}
+
+.delay-300 {
+animation-delay: 300ms;
+}
+
+.delay-400 {
+animation-delay: 400ms;
+}
+
+.delay-500 {
+animation-delay: 500ms;
+}
+
+/* =========================================================
+5. SCROLL REVEAL ANIMATIONS
+
+JavaScript can add the "is-visible" class when an element
+enters the viewport.
+
+Example:
+
+   <div class="reveal">...</div>
+========================================================= */.reveal {
+opacity: 0;
+transform: translateY(24px);
+
+transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+
+will-change: opacity, transform;
+
+}
+
+.reveal.is-visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Reveal from the left */
+
+.reveal-left {
+opacity: 0;
+transform: translateX(-28px);
+
+transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+
+}
+
+.reveal-left.is-visible {
+opacity: 1;
+transform: translateX(0);
+}
+
+/* Reveal from the right */
+
+.reveal-right {
+opacity: 0;
+transform: translateX(28px);
+
+transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+
+}
+
+.reveal-right.is-visible {
+opacity: 1;
+transform: translateX(0);
+}
+
+/* Reveal with a subtle zoom */
+
+.reveal-scale {
+opacity: 0;
+transform: scale(0.96);
+
+transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+
+}
+
+.reveal-scale.is-visible {
+opacity: 1;
+transform: scale(1);
+}
+
+/* Stagger reveal elements */
+
+.reveal-delay-1 {
+transition-delay: 100ms;
+}
+
+.reveal-delay-2 {
+transition-delay: 200ms;
+}
+
+.reveal-delay-3 {
+transition-delay: 300ms;
+}
+
+.reveal-delay-4 {
+transition-delay: 400ms;
+}
+
+/* =========================================================
+6. BUTTON ANIMATIONS
+========================================================= */
+
+.btn,
+button {
+-webkit-tap-highlight-color: transparent;
+}
+
+/* Hover lift */
+
+.btn:hover,
+.button:hover {
+transform: translateY(-2px);
+}
+
+/* Active press */
+
+.btn:active,
+.button:active {
+transform: translateY(0) scale(0.98);
+}
+
+/* Primary button glow */
+
+.btn-primary:hover,
+.button-primary:hover {
+box-shadow:
+0 8px 24px rgba(22, 135, 255, 0.22),
+0 0 16px rgba(0, 217, 255, 0.1);
+}
+
+/* Secondary button hover */
+
+.btn-secondary:hover,
+.button-secondary:hover {
+box-shadow: var(--glow-cyan);
+}
+
+/* Button with an animated arrow */
+
+.btn .arrow,
+.button .arrow {
+display: inline-block;
+transition: transform var(--animation-normal);
+}
+
+.btn:hover .arrow,
+.button:hover .arrow {
+transform: translateX(4px);
+}
+
+/* =========================================================
+7. CARD HOVER ANIMATIONS
+========================================================= */
+
+.card,
+.feature-card,
+.service-card,
+.product-card,
+.innovation-card {
+transition:
+transform 300ms ease,
+border-color 300ms ease,
+box-shadow 300ms ease,
+background-color 300ms ease;
+}
+
+.card:hover,
+.feature-card:hover,
+.service-card:hover,
+.product-card:hover,
+.innovation-card:hover {
+transform: translateY(-5px);
+
+border-color:
+    var(--color-primary, #1687ff);
+
+box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.18),
+    0 0 16px rgba(22, 135, 255, 0.07);
+
+}
+
+/* Card icon animation */
+
+.card .icon,
+.feature-card .icon,
+.service-card .icon,
+.product-card .icon {
+transition:
+transform 300ms ease,
+color 300ms ease;
+}
+
+.card:hover .icon,
+.feature-card:hover .icon,
+.service-card:hover .icon,
+.product-card:hover .icon {
+transform: translateY(-3px) scale(1.05);
+}
+
+/* Image zoom */
+
+.card-image,
+.feature-image,
+.product-image {
+overflow: hidden;
+}
+
+.card-image img,
+.feature-image img,
+.product-image img {
+transition: transform 500ms ease;
+}
+
+.card:hover .card-image img,
+.feature-card:hover .feature-image img,
+.product-card:hover .product-image img {
+transform: scale(1.04);
+}
+
+/* =========================================================
+8. FUTURISTIC GLOW EFFECTS
+========================================================= */
+
+.glow-blue {
+box-shadow: var(--glow-blue);
+}
+
+.glow-cyan {
+box-shadow: var(--glow-cyan);
+}
+
+.glow-text {
+text-shadow:
+0 0 12px rgba(22, 135, 255, 0.3);
+}
+
+.glow-text-cyan {
+text-shadow:
+0 0 12px rgba(0, 217, 255, 0.35);
+}
+
+/* Apply a pulsing glow to selected elements */
+
+.pulse-glow {
+animation: ftPulseGlow 3s ease-in-out infinite;
+}
+
+/* Animated border for featured cards */
+
+.animated-border {
+animation: ftBorderGlow 3s ease-in-out infinite;
+}
+
+/* =========================================================
+9. FLOATING VISUAL ELEMENTS
+========================================================= */
+
+.float {
+animation: ftFloat 5s ease-in-out infinite;
+}
+
+.float-gentle {
+animation: ftFloatGentle 6s ease-in-out infinite;
+}
+
+/* Different floating delays for layered visuals */
+
+.float-delay-1 {
+animation-delay: 500ms;
+}
+
+.float-delay-2 {
+animation-delay: 1s;
+}
+
+.float-delay-3 {
+animation-delay: 1.5s;
+}
+
+/* =========================================================
+10. ROTATING DECORATIVE ELEMENTS
+========================================================= */
+
+.rotate-slow {
+animation: ftRotate 24s linear infinite;
+}
+
+.rotate-medium {
+animation: ftRotate 14s linear infinite;
+}
+
+/* =========================================================
+11. ANIMATED GRADIENTS
+========================================================= */
+
+.animated-gradient {
+background-size: 200% 200%;
+animation: ftGradientShift 8s ease infinite;
+}
+
+/* =========================================================
+12. FUTURISTIC SCAN EFFECT
+========================================================= */
+
+.scan-effect {
+position: relative;
+overflow: hidden;
+}
+
+.scan-effect::after {
+content: "";
+
+position: absolute;
+top: 0;
+left: 0;
+
+width: 100%;
+height: 35%;
+
+pointer-events: none;
+
+background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 217, 255, 0.08),
+    transparent
+);
+
+animation: ftScan 5s linear infinite;
+
+}
+
+/* =========================================================
+13. STATUS INDICATORS
+========================================================= */
+
+.status-indicator {
+position: relative;
+display: inline-block;
+
+width: 9px;
+height: 9px;
+
+border-radius: 50%;
+background: var(--color-accent, #42e8c5);
+
+}
+
+.status-indicator.is-active {
+animation: ftBlink 2s ease-in-out infinite;
+}
+
+/* Optional expanding status ripple */
+
+.status-indicator.has-ripple::after {
+content: "";
+
+position: absolute;
+inset: -4px;
+
+border: 1px solid currentColor;
+border-radius: 50%;
+
+animation: ftRipple 2s ease-out infinite;
+
+}
+
+/* =========================================================
+14. LOADING ANIMATIONS
+========================================================= */
+
+.loading-spinner {
+width: 38px;
+height: 38px;
+
+border: 3px solid
+    var(--color-border, rgba(255, 255, 255, 0.12));
+
+border-top-color:
+    var(--color-primary, #1687ff);
+
+border-radius: 50%;
+
+animation: ftSpin 800ms linear infinite;
+
+}
+
+/* Small spinner */
+
+.loading-spinner-small {
+width: 20px;
+height: 20px;
+border-width: 2px;
+}
+
+/* Large spinner */
+
+.loading-spinner-large {
+width: 54px;
+height: 54px;
+border-width: 4px;
+}
+
+/* Loading dots */
+
+.loading-dots {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+}
+
+.loading-dots span {
+width: 7px;
+height: 7px;
+
+border-radius: 50%;
+background: currentColor;
+
+animation: ftBlink 1.2s ease-in-out infinite;
+
+}
+
+.loading-dots span:nth-child(2) {
+animation-delay: 200ms;
+}
+
+.loading-dots span:nth-child(3) {
+animation-delay: 400ms;
+}
+
+/* =========================================================
+15. PAGE LOADER
+========================================================= */
+
+.page-loader {
+opacity: 1;
+visibility: visible;
+
+transition:
+    opacity 400ms ease,
+    visibility 400ms ease;
+
+}
+
+.page-loader.is-hidden {
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+}
+
+/* =========================================================
+16. NAVIGATION ANIMATIONS
+========================================================= */
+
+.primary-navigation a {
+transition:
+color 250ms ease,
+background-color 250ms ease;
+}
+
+.primary-navigation a:hover {
+color: var(--color-primary, #1687ff);
+}
+
+/* Underline animation */
+
+.nav-underline {
+position: relative;
+}
+
+.nav-underline::after {
+content: "";
+
+position: absolute;
+left: 0;
+bottom: -4px;
+
+width: 0;
+height: 2px;
+
+background: var(--color-secondary, #00d9ff);
+
+transition: width 250ms ease;
+
+}
+
+.nav-underline:hover::after,
+.nav-underline.active::after {
+width: 100%;
+}
+
+/* Mobile navigation entrance */
+
+@media screen and (max-width: 1024px) {
+
+.primary-navigation.is-open {
+    animation: ftFadeDown 250ms ease both;
+}
+
+}
+
+/* =========================================================
+17. SOCIAL ICON ANIMATIONS
+========================================================= */
+
+.social-link {
+transition:
+transform 250ms ease,
+color 250ms ease,
+background-color 250ms ease;
+}
+
+.social-link:hover {
+transform: translateY(-3px);
+color: var(--color-secondary, #00d9ff);
+}
+
+/* =========================================================
+18. FORM INTERACTIONS
+========================================================= */
+
+input,
+select,
+textarea {
+transition:
+border-color 250ms ease,
+box-shadow 250ms ease,
+background-color 250ms ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+box-shadow:
+0 0 0 3px rgba(22, 135, 255, 0.12);
+}
+
+/* =========================================================
+19. FAQ INTERACTIONS
+========================================================= */
+
+.faq-question {
+transition:
+color 250ms ease,
+background-color 250ms ease;
+}
+
+.faq-question:hover {
+color: var(--color-secondary, #00d9ff);
+}
+
+/* =========================================================
+20. BACK-TO-TOP BUTTON
+========================================================= */
+
+.back-to-top {
+transition:
+opacity 250ms ease,
+visibility 250ms ease,
+transform 250ms ease,
+background-color 250ms ease;
+}
+
+.back-to-top:hover {
+transform: translateY(-4px);
+}
+
+/* =========================================================
+21. REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+*,
+*::before,
+*::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+}
+
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+}
+
+}
+
+/* =========================================================
+END OF ANIMATIONS STYLESHEET
+========================================================= */

@@ -1,0 +1,813 @@
+/* =========================================================
+FUTURE TECH OFFICIAL
+RESPONSIVE STYLESHEET
+File: css/responsive.css
+
+Purpose:
+
+- Desktop and laptop optimization
+- Tablet layout adjustments
+- Mobile phone optimization
+- Responsive navigation layout
+- Responsive cards, forms, and sections
+  ========================================================= */
+
+/* =========================================================
+
+1. LARGE DESKTOPS
+   Screens below 1400px
+   ========================================================= */
+
+@media screen and (max-width: 1400px) {
+
+.container,
+.container-wide {
+    width: min(100% - 64px, 1240px);
+}
+
+.section {
+    padding-top: 88px;
+    padding-bottom: 88px;
+}
+
+.hero-title {
+    font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+}
+
+.section-title {
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+}
+
+}
+
+/* =========================================================
+2. LAPTOPS AND SMALL DESKTOPS
+Screens below 1200px
+========================================================= */
+
+@media screen and (max-width: 1200px) {
+
+:root {
+    --container-width: 1100px;
+    --section-padding: 76px;
+}
+
+.container,
+.container-wide {
+    width: min(100% - 48px, 1100px);
+}
+
+/* Header */
+
+.header-container {
+    gap: 20px;
+}
+
+.primary-navigation {
+    gap: 18px;
+}
+
+.primary-navigation a {
+    font-size: 0.9rem;
+}
+
+/* Hero sections */
+
+.hero {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero-title {
+    font-size: clamp(2.6rem, 4.4vw, 4rem);
+}
+
+.hero-description {
+    max-width: 680px;
+}
+
+/* Grids */
+
+.grid-4,
+.four-column-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-3,
+.three-column-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Footer */
+
+.footer-main-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 32px;
+}
+
+}
+
+/* =========================================================
+3. TABLETS AND SMALL LAPTOPS
+Screens below 1024px
+========================================================= */
+
+@media screen and (max-width: 1024px) {
+
+:root {
+    --section-padding: 68px;
+}
+
+.container,
+.container-wide {
+    width: min(100% - 40px, 960px);
+}
+
+/* Header */
+
+.site-header {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.header-container {
+    flex-wrap: wrap;
+}
+
+.mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+   The navigation is arranged as a mobile panel.
+   JavaScript should toggle the "is-open" class
+   on .primary-navigation.
+*/
+
+.primary-navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    width: 100%;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+
+    padding: 12px 24px 24px;
+
+    background: var(--color-bg, #07111f);
+    border-top: 1px solid var(--color-border, #263449);
+    border-bottom: 1px solid var(--color-border, #263449);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
+
+    z-index: 1000;
+}
+
+.primary-navigation.is-open {
+    display: flex;
+}
+
+.primary-navigation > a,
+.primary-navigation > .nav-link {
+    display: block;
+    width: 100%;
+    padding: 15px 8px;
+
+    border-bottom: 1px solid
+        var(--color-border, rgba(255, 255, 255, 0.08));
+}
+
+.primary-navigation > a:last-child,
+.primary-navigation > .nav-link:last-child {
+    border-bottom: none;
+}
+
+/*
+   If your header contains dropdown menus, keep
+   dropdown content within the mobile navigation.
+*/
+
+.primary-navigation .dropdown-menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 8px;
+
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+/* Hero */
+
+.hero {
+    min-height: auto;
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+.hero-grid,
+.hero-layout,
+.two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-visual,
+.hero-image-container {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+}
+
+.hero-title {
+    max-width: 850px;
+    font-size: clamp(2.5rem, 5.5vw, 4rem);
+}
+
+/* General grids */
+
+.grid-4,
+.four-column-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3,
+.three-column-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-2,
+.two-column-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Innovation and product layouts */
+
+.innovation-grid,
+.product-grid,
+.service-grid,
+.research-grid,
+.partnership-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Statistics */
+
+.stats-grid,
+.statistics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Forms */
+
+.form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+}
+
+/* Footer */
+
+.footer-main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.footer-brand,
+.footer-about {
+    grid-column: 1 / -1;
+}
+
+}
+
+/* =========================================================
+4. TABLETS
+Screens below 768px
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+:root {
+    --section-padding: 60px;
+}
+
+html {
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-size: 0.96rem;
+}
+
+.container,
+.container-wide {
+    width: min(100% - 36px, 700px);
+}
+
+/* Sections */
+
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-header {
+    margin-bottom: 36px;
+}
+
+.section-title {
+    font-size: clamp(1.9rem, 5vw, 2.7rem);
+    line-height: 1.2;
+}
+
+.section-description {
+    font-size: 1rem;
+}
+
+/* Header */
+
+.header-container {
+    gap: 14px;
+}
+
+.site-logo {
+    max-width: calc(100% - 70px);
+}
+
+.site-logo img {
+    max-width: 42px;
+    height: auto;
+}
+
+/* Hero */
+
+.hero {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.hero-title {
+    font-size: clamp(2.25rem, 7vw, 3.5rem);
+    line-height: 1.12;
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.hero-actions,
+.button-group,
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-actions .btn,
+.button-group .btn,
+.cta-actions .btn {
+    max-width: 100%;
+}
+
+/* Cards and grids */
+
+.grid-4,
+.four-column-grid,
+.grid-3,
+.three-column-grid,
+.innovation-grid,
+.product-grid,
+.service-grid,
+.research-grid,
+.partnership-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.grid-2,
+.two-column-grid,
+.hero-grid,
+.hero-layout,
+.two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+}
+
+.stats-grid,
+.statistics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.card {
+    height: auto;
+}
+
+/* Images */
+
+.hero-visual img,
+.hero-image-container img,
+.feature-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Forms */
+
+.form-grid {
+    grid-template-columns: 1fr;
+}
+
+.form-container,
+.contact-form,
+.sponsorship-form {
+    padding: 24px;
+}
+
+.form-actions {
+    flex-wrap: wrap;
+}
+
+/* Tables */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    min-width: 600px;
+}
+
+/* Footer */
+
+.footer-main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+}
+
+/* Back to top */
+
+.back-to-top {
+    right: 18px;
+    bottom: 18px;
+}
+
+}
+
+/* =========================================================
+5. MOBILE PHONES
+Screens below 576px
+========================================================= */
+
+@media screen and (max-width: 576px) {
+
+:root {
+    --section-padding: 48px;
+}
+
+body {
+    font-size: 0.94rem;
+}
+
+.container,
+.container-wide {
+    width: calc(100% - 32px);
+}
+
+/* Header */
+
+.site-header {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.header-container {
+    gap: 10px;
+}
+
+.site-logo {
+    gap: 9px;
+}
+
+.site-logo img {
+    max-width: 36px;
+}
+
+.site-logo span,
+.logo-text {
+    font-size: 1rem;
+}
+
+.mobile-menu-toggle {
+    min-width: 42px;
+    min-height: 42px;
+    padding: 8px;
+}
+
+.primary-navigation {
+    padding: 10px 16px 20px;
+}
+
+/* Typography */
+
+h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+}
+
+h2 {
+    font-size: clamp(1.65rem, 7vw, 2.2rem);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+.section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.section-header {
+    margin-bottom: 28px;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 7vw, 2.3rem);
+}
+
+.section-description {
+    font-size: 0.95rem;
+}
+
+/* Hero */
+
+.hero {
+    padding-top: 52px;
+    padding-bottom: 52px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.14;
+    overflow-wrap: break-word;
+}
+
+.hero-description {
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+.hero-actions,
+.button-group,
+.cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+
+.hero-actions .btn,
+.button-group .btn,
+.cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Cards */
+
+.grid-4,
+.four-column-grid,
+.grid-3,
+.three-column-grid,
+.grid-2,
+.two-column-grid,
+.innovation-grid,
+.product-grid,
+.service-grid,
+.research-grid,
+.partnership-grid,
+.stats-grid,
+.statistics-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.card,
+.feature-card,
+.service-card,
+.product-card,
+.innovation-card {
+    padding: 22px;
+}
+
+/* Statistics */
+
+.stat-number,
+.stat-value {
+    font-size: 2rem;
+}
+
+/* CTA */
+
+.cta-section,
+.cta-content {
+    padding: 28px 20px;
+}
+
+.cta-title {
+    font-size: 1.8rem;
+}
+
+/* Forms */
+
+.form-container,
+.contact-form,
+.sponsorship-form {
+    padding: 20px 16px;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+input,
+select,
+textarea {
+    font-size: 16px;
+}
+
+.form-actions {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.form-actions .btn {
+    width: 100%;
+}
+
+/* FAQ */
+
+.faq-question {
+    gap: 12px;
+    padding: 16px;
+    font-size: 0.95rem;
+}
+
+.faq-answer {
+    padding: 0 16px 16px;
+}
+
+/* Footer */
+
+.footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+}
+
+.footer-brand,
+.footer-about {
+    grid-column: auto;
+}
+
+.footer-bottom {
+    font-size: 0.85rem;
+}
+
+.footer-legal-links {
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Back to top */
+
+.back-to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 42px;
+    height: 42px;
+}
+
+}
+
+/* =========================================================
+6. EXTRA-SMALL MOBILE PHONES
+Screens below 380px
+========================================================= */
+
+@media screen and (max-width: 380px) {
+
+.container,
+.container-wide {
+    width: calc(100% - 24px);
+}
+
+.hero {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.hero-title {
+    font-size: 1.9rem;
+}
+
+.section-title {
+    font-size: 1.7rem;
+}
+
+.site-logo span,
+.logo-text {
+    font-size: 0.9rem;
+}
+
+.card,
+.feature-card,
+.service-card,
+.product-card,
+.innovation-card {
+    padding: 18px;
+}
+
+.form-container,
+.contact-form,
+.sponsorship-form {
+    padding: 16px 12px;
+}
+
+}
+
+/* =========================================================
+7. LANDSCAPE MOBILE PHONES
+========================================================= */
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+.hero {
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+.primary-navigation {
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+}
+
+}
+
+/* =========================================================
+8. ACCESSIBILITY AND MOTION PREFERENCES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+*,
+*::before,
+*::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+}
+
+/* =========================================================
+END OF RESPONSIVE STYLESHEET
+========================================================= */
